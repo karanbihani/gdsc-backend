@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{%include 'header.html'%}
+
+{%block title%} Sign Up {%endblock%}
+
+{%block body%} 
+
+    <div >
+        <h2 class="centre">Sign Up</h2>
+        <form action="{{url_for('signup')}}" method="Post">
+            <h4>{{error}}</h4>
+            <label1>User Name:</label1>
+            <input type="text" name="id" placeholder="Enter Your ID">
+            
+            <label1>Password</label1>
+            <input type="password" name="pwd" placeholder="Enter Your Password">
+            <br>
+            <button type ="submit">Sign Up</button>
+        </form>
+    </div>
+    
+    <br><br>
+    <button type = "button" onclick="window.location.replace('/loginpage')">Login</button></h2> 
+
+{%endblock%}

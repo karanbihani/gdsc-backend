@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{%include 'header.html'%}
+
+{%block title%} Home {%endblock%}
+
+{%block body%} 
+
+    <h2> Manage <b>Employees</b> <button type = "button" onclick="window.location.replace('/newemp/')">Add New Employees</button></h2> 
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>MailID</th>
+            <th>Phone No</th>
+            <th>Action</th>
+        </tr>
+        
+        {% for row in employees%}
+
+        <tr>
+            <td>{{row.id}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.phone}}</td>
+            <td>
+                <a href="/editemp/{{row.id}}" >Edit</a>
+                <a href="/delete/{{row.id}}"  onclick="return confirm('Are You Sure You Want to Delete?')">Delete</a>
+            </td>
+         </tr>
+        {% endfor %}
+    </table>
+
+{%endblock%}
+
