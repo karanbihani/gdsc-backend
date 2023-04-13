@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{%include 'header.html'%}
+
+{%block title%} Home {%endblock%}
+
+{%block body%} 
+
+    <div >
+        <h4>Edit Message</h4>
+        <form action="{{url_for('update')}}" method="Post">
+            <label1>Message:</label1>
+            
+            <input type="hidden" name="mid" value = "{{my_data[0][1]}}">
+            <input type="long text" name="msg" value = {{my_data[0][0]}}>
+            
+            <button type ="submit">Edit Message</button>
+        </form>
+            </div>
+    
+    <button type = "button" onclick="window.location.replace('/yourpage')">Back</button></h2> 
+
+
+{%endblock%}

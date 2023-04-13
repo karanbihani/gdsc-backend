@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{%include 'header.html'%}
+
+{%block title%} Home {%endblock%}
+
+{%block body%} 
+
+    <div id-"mymodal" role-"dialog">
+        <h4>Add Employee</h4>
+        <form action="{{url_for('insert')}}" method="post">
+            <label1>Message:</label1>
+            <input type="text" name="msg" required="1">
+            <button type ="submit" method-'post'>Post Message</button>
+        </form>
+        
+    </div>
+    
+    <button type = "button" onclick="window.location.replace('/yourpage/')">Back</button></h2> 
+
+
+{%endblock%}

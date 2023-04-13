@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{%include 'header.html'%}
+
+{%block title%} Home {%endblock%}
+
+{%block body%} 
+
+    <h2>Your Messages</h2> <button type = "button" onclick="window.location.replace('/mainpage/')">All Messages</button></h2>
+        <hr>
+        {% for row in data%}
+
+        <div style="color: darkcyan;"> 
+            <pre>{{row[0]}}                                          {{row[2].time()}}</pre>
+            <small>{{row[1]}}</small>
+            <br>
+            <a href="/editmsg/{{row[3]}}" >Edit</a>
+            <a href="/delete/{{row[3]}}"  onclick="return confirm('Are You Sure You Want to Delete?')">Delete</a>
+        </div>
+        <hr>
+
+        {% endfor %}
+    <div><button type = "button" onclick="window.location.replace('/newmessage/')">New Message</button></h2></div>
+    </table>
+
+{%endblock%}
+

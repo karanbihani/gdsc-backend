@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%include 'header.html'%}
+
+{%block title%} Home {%endblock%}
+
+{%block body%} 
+
+    <h2> All Messages</h2> <button type = "button" onclick="window.location.replace('/yourpage/')">Your Messages</button></h2>
+        <hr>
+        {% for row in data%}
+
+        <div style="color: darkcyan;"> 
+            <pre>{{row[0]}}                                          {{row[2].time()}}</pre>
+            <pre><small>{{row[1]}}</small>                                         <button >❤️</button>  {{row[4]}} </pre>
+        </div>
+        <hr>
+
+        {% endfor %}
+    </table>
+
+{%endblock%}
+
